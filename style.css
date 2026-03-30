@@ -1,0 +1,121 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+}
+
+main{
+    margin:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar{
+    position:relative;
+    width:260px;
+}
+
+.input-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid black;
+    width:100%;
+}
+
+.input-box input{
+   flex:1;
+   padding:0 10px;
+   border:none;
+   outline:none;
+   height:40px;
+}
+
+.icon-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:0 10px;
+    height: 40px;
+    border:none;
+    border-left:1px solid black;
+    background: #fff;
+    cursor: pointer;
+}
+.icon-btn img{
+   width:20px;
+   height:20px;
+}
+
+.grid-container{
+    background:white;
+    border:1px solid #ddd;
+    position: absolute;
+    display: none;
+    top:100%;
+    left:0;
+    z-index: 10;
+    margin-top:8px;
+    width:100%;
+    border:1px solid black;
+    transition: all 0.2s ease;
+}
+
+.week{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    border-bottom: 1px solid black;
+    gap:1px;
+}
+
+.week p{
+    padding:8px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.date{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap:1px;
+    background:#ccc;
+    /* cursor:pointer; */
+}
+
+.month{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.month span{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.date p{
+    justify-self: center;
+    text-align: center;
+    padding:8px;
+    width: 100%;
+    height:100%;
+    background:white;
+}
+
+.date p:hover:not(.not-active){
+    background:#f0f0f0;
+    cursor:pointer;
+}
+
+.calendar:focus-within .grid-container{
+       display: block;
+}
+
